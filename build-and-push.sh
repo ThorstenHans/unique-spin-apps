@@ -20,7 +20,7 @@ spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERV
 
 cd app
 
-for i in {$START..$END}; do
+for i in $(seq $START $END); do
      if (( i % 500 == 0 )); then
           spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERVER
      fi
