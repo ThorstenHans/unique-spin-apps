@@ -22,7 +22,6 @@ jobs:
         run: ./build-and-push.sh
         env:
           OCI_ARTIFACT: thorstenhans/unique-spin-app
-          REGISTRY_LOGIN_SERVER: registry-1.docker.io
           REGISTRY_USER: ${{ secrets.DOCKERHUB_USERNAME }}
           REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Docker Hub Description

@@ -1,6 +1,8 @@
 #! /bin/bash
 
 OCI_ARTIFACT=${OCI_ARTIFACT:-thorstenhans/unique-spin-app}
+REGISTRY_LOGIN_SERVER=${REGISTRY_LOGIN_SERVER:-registry-1.docker.io}
+
 set -euo pipefail
 
 if [ -z "${REGISTRY_USER:-}" ]; then
