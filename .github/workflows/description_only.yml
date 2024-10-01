@@ -1,0 +1,17 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  update-docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: thorstenhans/unique-spin-app
+          short-description: "5000 unique Spin Apps to demonstrate high-density"
+          enable-url-completion: true
