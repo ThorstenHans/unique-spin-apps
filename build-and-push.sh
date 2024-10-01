@@ -14,7 +14,7 @@ if [ -z "${REGISTRY_PASSWORD:-}" ]; then
      echo "Error: REGISTRY_PASSWORD is not set."
      exit 1
 fi
-
+spin --version
 spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERVER
 
 cd app
