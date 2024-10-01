@@ -2,7 +2,8 @@
 
 OCI_ARTIFACT=${OCI_ARTIFACT:-thorstenhans/unique-spin-app}
 REGISTRY_LOGIN_SERVER=${REGISTRY_LOGIN_SERVER:-index.docker.io}
-
+START=${START:-1}
+END=${END:-2}
 set -euo pipefail
 
 if [ -z "${REGISTRY_USER:-}" ]; then
@@ -14,13 +15,13 @@ if [ -z "${REGISTRY_PASSWORD:-}" ]; then
      echo "Error: REGISTRY_PASSWORD is not set."
      exit 1
 fi
-spin --version
+
 spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERVER
 
 cd app
 
-for i in {1..5000}; do
-     if (( i % 1000 == 0 )); then
+for i in {$START..$END}; do
+     if (( i % 500 == 0 )); then
           spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERVER
      fi
      echo "Building and pushing Spin App: $i"
