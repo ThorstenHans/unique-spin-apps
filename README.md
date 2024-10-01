@@ -6,6 +6,8 @@ Every individual Spin App returns it's unique identifier as a HTTP response head
 
 Using unique OCI artifacts, you can ensure Kubernetes (e.g. using [SpinKube](https://spinkube.dev)) has to pull a particular artifact per Spin App deployment.
 
+## Running a Spin App locally
+
 You can also run those apps on your local machine using the `spin` CLI:
 
 ```bash
@@ -16,7 +18,7 @@ Available Routes:
   app: http://127.0.0.1:3000 (wildcard)
 ```
 
-From within a new terminal instance you can sent an HTTP request to the Spin App using `curl`:
+From within a new terminal instance you can sent an HTTP request to the Spin App using the `curl` CLI:
 
 ```bash
 curl -iX GET localhost:3000

@@ -14,5 +14,5 @@ component = "app"
 source = "target/wasm32-wasi/release/app.wasm"
 allowed_outbound_hosts = []
 [component.app.build]
-command = "cargo build --target wasm32-wasi --release"
+command = "cargo build --target wasm32-wasi --release --quiet" 
 watch = ["src/**/*.rs", "Cargo.toml"]
