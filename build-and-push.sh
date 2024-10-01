@@ -2,8 +2,8 @@
 
 OCI_ARTIFACT=${OCI_ARTIFACT:-thorstenhans/unique-spin-app}
 REGISTRY_LOGIN_SERVER=${REGISTRY_LOGIN_SERVER:-index.docker.io}
-START=${START:-1}
-END=${END:-2}
+START_AT=${START_AT:-1}
+END_AT=${END_AT:-2}
 set -euo pipefail
 
 if [ -z "${REGISTRY_USER:-}" ]; then
@@ -20,7 +20,7 @@ spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERV
 
 cd app
 
-for i in $(seq $START $END); do
+for i in $(seq $START_AT $END_AT); do
      if (( i % 500 == 0 )); then
           spin registry login -u $REGISTRY_USER -p $REGISTRY_PASSWORD $REGISTRY_LOGIN_SERVER
      fi
