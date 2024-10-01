@@ -1,7 +1,7 @@
 #! /bin/bash
 
 OCI_ARTIFACT=${OCI_ARTIFACT:-thorstenhans/unique-spin-app}
-REGISTRY_LOGIN_SERVER=${REGISTRY_LOGIN_SERVER:-registry-1.docker.io}
+REGISTRY_LOGIN_SERVER=${REGISTRY_LOGIN_SERVER:-index.docker.io/v1}
 
 set -euo pipefail
 
