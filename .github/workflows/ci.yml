@@ -25,7 +25,7 @@ jobs:
           REGISTRY_USER: ${{ secrets.DOCKERHUB_USERNAME }}
           REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
           START_AT: 1
-          END_AT: 2
+          END_AT: 2500
   build-and-push-1:
     runs-on: ubuntu-latest
     steps:
