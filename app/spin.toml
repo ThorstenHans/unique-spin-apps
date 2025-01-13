@@ -11,7 +11,7 @@ route = "/..."
 component = "app"
 
 [component.app]
-source = "target/wasm32-wasi/release/app.wasm"
+source = "target/wasm32-wasip1/release/app.wasm"
 allowed_outbound_hosts = []
 [component.app.build]
 command = "cargo build --target wasm32-wasip1 --release --quiet"
